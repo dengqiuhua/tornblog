@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>{% block title %}{% end %}tornblog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ static_url('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ reverse_url('default_static', 'style.css') }}" rel="stylesheet">
+    {% block head %}{% end %}
+  </head>
+
+  <body>
+
+    {% include "web-header.html" %}
+
+    <div class="container">
+        {% block container %}{% end %}
+
+    </div><!-- /.container -->
+
+
+    <script src="{{ static_url('js/jquery-1.11.1.min.js') }}"></script>
+    <script src="{{ static_url('js/bootstrap.min.js') }}"></script>
+    {% block script %}{% end %}
+  </body>
+</html>

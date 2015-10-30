@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block container %}
+    <h3 class="page-header">博客</h3>
+    <div id="datalist">
+
+    </div>
+    <div class="pagenation"></div>
+{% end %}
+
+{% block script %}
+    <script type="text/javascript">
+        var urls = {
+            url_api_blog:"{{ reverse_url('api-blog') }}",
+            url_api_blog_detail:"{{ reverse_url('api-blog-detail', 0) }}"
+        };
+    </script>
+    <script type="text/javascript" src="{{ static_url('assets/admin-blog.js') }}"></script>
+{% end %}

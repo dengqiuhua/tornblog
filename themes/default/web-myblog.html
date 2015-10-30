@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block container %}
+    <h3 class="page-header">我的博客
+    <small>
+        <a class="btn btn-primary pull-right" href="{{ reverse_url('web-blog-add') }}"><span class="glyphicon glyphicon-plus"></span> 添加博客</a>
+    </small>
+    </h3>
+    <div>
+        {% if bloglist %}
+        {% for blog in bloglist %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <a href="{{ reverse_url('web-blog-detail',blog['id']) }}">{{ blog["title"] }}</a>
+                <span class="pull-right text-muted">{{blog["createtime"]}}</span>
+            </div>
+            <div class="panel-body">
+                {% if len(blog["content"]) > 300 %}
+                    {{ blog["content"][:300] }} ...
+                {% else %}
+                    {{ blog["content"] }}
+                {% end %}
+
+            </div>
+        </div>
+        {% end %}
+        {% end %}
+    </div>
+    {% autoescape None %}
+    {{page_html}}
+{% end %}

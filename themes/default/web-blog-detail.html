@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block container %}
+    <div class="col-sm-8">
+        <h3 class="page-header">{{ blog["title"] }}
+        <small>
+            <span class="text-muted">{{blog["createtime"]}}</span>
+        </small>
+        </h3>
+        <div>
+            {% raw blog["content"] %}
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <h4 class="page-header">热门博客</h4>
+        {% if bloglist %}
+        {% for blog_hot in bloglist %}
+        <li>
+            <a href="{{ reverse_url('web-blog-detail',blog_hot['id']) }}" title="{{ blog_hot['title'] }}">
+                {% if len(blog_hot["title"]) > 20 %}
+                    {{ blog_hot["title"][:20] }}
+                {% else %}
+                    {{ blog_hot["title"] }}
+                {% end %}
+            </a>
+        <span class="pull-right text-muted">{{blog_hot["view_count"]}}</span>
+        </li>
+
+        {% end %}
+        {% end %}
+    </div>
+
+{% end %}

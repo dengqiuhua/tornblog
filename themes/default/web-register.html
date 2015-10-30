@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block head %}
+<style type="text/css">
+    body{
+        height: 100%;
+        clear: both;
+        background: url("/themes/static/img/bg-login.jpg") no-repeat 50% 0;
+    }
+</style>
+{% end %}
+
+{% block container %}
+    <div class="login-bg register-form clearfix text-center">
+        <h3 class="page-header">注册</h3>
+        <div class="col-sm-4 col-sm-offset-4">
+            <form class="form-register" method="post">
+
+                <label class="sr-only" for="inputEmail">用户名</label>
+                <input type="text" autofocus="" required="" placeholder="用户名" name="username" class="form-control ime" id="inputEmail">
+                <label class="sr-only" for="inputName">姓名</label>
+                <input type="text" autofocus="" required="" placeholder="姓名" name="name" class="form-control" id="inputName">
+                <label class="sr-only" for="inputPassword">密码</label>
+                <input type="password" required="" placeholder="密码" name="password" class="form-control pw1" id="inputPassword">
+                <label class="sr-only" for="inputPassword2">确认密码</label>
+                <input type="password" required="" placeholder="确认密码" name="password2" class="form-control pw2" id="inputPassword2">
+                <button type="submit" class="btn btn-lg btn-primary btn-block">注册</button>
+            </form>
+        </div>
+    </div>
+{% end %}

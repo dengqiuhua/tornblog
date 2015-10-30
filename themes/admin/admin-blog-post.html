@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block container %}
+    <div>
+        <form id="form-personal" class="form-horizontal form-signin" onsubmit="return false;">
+
+            <div class="form-group">
+                <label for="inputName" class="col-sm-2 control-label">标题</label>
+                <div class="col-sm-10">
+                  <input type="text" name="title" class="form-control" required="" id="inputName" placeholder="标题不能为空" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputSummary" class="col-sm-2 control-label">详细内容</label>
+                <div class="col-sm-10">
+                  <textarea name="content" id="inputSummary" class="form-control"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="button" class="btn btn-success" onclick="AddNews();">添加</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+{% end %}

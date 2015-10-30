@@ -1,0 +1,39 @@
+body{padding-top: 44px;}
+body>.container{min-height: 500px;}
+.form-signin{
+    background: #ffffff;
+    padding: 30px 20px;
+}
+.register-form{background: #ffffff; min-height:300px; padding-bottom: 30px;}
+.form-signin input[type="text"],.form-register input[type="text"] {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: -1px;
+}
+.form-signin input[type="password"],.form-register .pw2 {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-bottom: 10px;
+}
+
+.form-register .pw1 {
+    border-radius: 0;
+    margin-bottom: -1px;
+}
+.form-signin .form-control, .form-register .form-control{
+    box-sizing: border-box;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    position: relative;
+}
+.login-bg{
+    height: 100%;
+    clear: both;
+}
+.ime{ime-mode: disabled;}
+
+#index-container .media{
+    border-bottom: dashed 1px #ddd;
+    padding: 17px 0;
+}

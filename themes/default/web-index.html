@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block container %}
+    <h3 class="page-header">最新博客</h3>
+    <div id="index-container">
+        {% if bloglist %}
+        {% for blog in bloglist %}
+        <div class="media">
+            <!--<div class="media-left">
+                <a href="#">
+                <img class="media-object" src="..." alt="...">
+                </a>
+            </div>-->
+            <div class="media-body">
+                <h4 class="media-heading">
+                    <a href="{{ reverse_url('web-blog-detail',blog['id']) }}">{{ blog["title"] }}</a>
+                    <small><span class="pull-right text-muted">{{blog["createtime"]}}</span></small>
+                </h4>
+                {% if len(blog["content"]) > 300 %}
+                    {{ blog["content"][:300] }} ...
+                {% else %}
+                    {{ blog["content"] }}
+                {% end %}
+            </div>
+        </div>
+        {% end %}
+        {% end %}
+    </div>
+    {% autoescape None %}
+    {{page_html}}
+
+{% end %}

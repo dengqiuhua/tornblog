@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block head %}
+<style type="text/css">
+    body{
+        height: 100%;
+        clear: both;
+        background: url("/themes/static/img/bg-login.jpg") no-repeat 50% 0;
+    }
+</style>
+{% end %}
+
+{% block container %}
+    <div class="login-bg clearfix">
+        <div class="col-sm-4 col-sm-offset-8">
+            <form class="form-signin" method="post">
+                <h2 class="form-signin-heading">登录</h2>
+                <label class="sr-only" for="inputEmail">用户名</label>
+                <input type="text" autofocus="" required="" placeholder="用户名" name="username" class="form-control" id="inputEmail">
+                <label class="sr-only" for="inputPassword">密码</label>
+                <input type="password" required="" placeholder="密码" name="password" class="form-control" id="inputPassword">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="remember-me"> 记住密码
+                  </label>
+                </div>
+                <button type="submit" class="btn btn-lg btn-primary btn-block">登录</button>
+            </form>
+        </div>
+    </div>
+{% end %}
